@@ -7,7 +7,7 @@ import math
 import shutil
 import re
 # %%
-threshold = 2 * 1024 * 1024
+threshold = 1.5 * 1024 * 1024
 blog_file_dir = os.path.dirname(os.path.abspath(__file__))
 source_photos_dir = os.path.join(blog_file_dir, "originPhotos")
 target_photos_dir = os.path.join(blog_file_dir, "photos")
