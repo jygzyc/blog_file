@@ -49,6 +49,9 @@ class ImageProcess:
                 with Image.open(filename) as im:
                     output_filename = filename.replace(source_dir, target_dir)
                     im.save(output_filename)
+    def remove_photos(self, workdir):
+        if os.path.exists(workdir):
+            shutil.rmtree(workdir)
 
 
 class Copy_posts:
@@ -97,6 +100,7 @@ def git_operation():
 if __name__ == "__main__":
     print("---- Image Process Start----")
     imm = ImageProcess()
+    imm.remove_photos(target_photos_dir)
     imm.resize_images(source_photos_dir, target_photos_dir, threshold)
     print("---- Image Process Over----")
     print("---- _posts Process Start----")
